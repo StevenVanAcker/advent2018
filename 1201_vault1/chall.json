@@ -1,0 +1,13 @@
+{
+	"name": "vault1",
+	"date": "2018-12-01",
+	"state": "unopened",
+	"hidden": false,
+	"flag": "Should_have_us3d_the_bl0ckchain!",
+	"category": "misc",
+	"points": 300,
+	"info": "Santa's elves installed a secure vault to store Santa's secret documents. Can you crack it?",
+	"author": "Steven",
+	"play_url": "telnet 18.205.93.120 1201",
+	"download_url": ""
+}

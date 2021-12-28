@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# TODO: actually record description
+datalen=$(echo -n "$*" | wc -c)
+echo "Description recorded: $datalen character(s)"

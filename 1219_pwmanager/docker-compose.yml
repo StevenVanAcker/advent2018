@@ -1,0 +1,29 @@
+version: '2'
+services:
+  server:
+    build: ./server
+    ports:
+     - "1219:1219"
+    volumes:
+     - "./ad-storage:/opt/pwmanager/server/ads.dir/ads"
+     - "./config.json:/opt/pwmanager/server/config.json"
+     - "./flag:/opt/pwmanager/server/flag"
+    network_mode: bridge
+    restart: always
+
+  browser:
+    build: ./browser
+    volumes:
+     - "./ad-storage:/opt/pwmanager/browser/ads"
+     - "./config.json:/opt/pwmanager/browser/config.json"
+    links:
+     - "server:ad.advent2018.overthewire.org"
+     - "server:santa.advent2018.overthewire.org"
+    cpu_quota:            200000
+    oom_score_adj:        1000
+    mem_limit:            '256m'
+    memswap_limit:        '256m'
+    network_mode: bridge
+    restart: always
+
+

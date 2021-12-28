@@ -1,0 +1,13 @@
+{
+	"name": "udpsanta",
+	"date": "2018-12-06",
+	"state": "unopened",
+	"hidden": false,
+	"flag": "Sinterklaas_really_iz_my_Spanish_cousin...",
+	"category": "crypto/pwn/reversing",
+	"points": 250,
+	"info": "Little known fact about Santa is that he runs an encrypted messaging service over UDP. We managed to capture some traffic...",
+	"author": "Steven",
+	"play_url": "UDP 18.205.93.120:1206",
+	"download_url": "mMZfQMAdYKHBUwFDJR8XCr4yd2DS5anm-udpsanta.tar.xz"
+}

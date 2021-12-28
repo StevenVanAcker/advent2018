@@ -1,0 +1,22 @@
+version: '3'
+services:
+###   client:
+###     hostname: client
+###     build: .
+###     cap_add:
+###      - SYS_PTRACE
+###     security_opt:
+###      - apparmor:unconfined
+
+  server:
+    hostname: server
+    build: .
+    ports:
+     - "1206:1206/udp"
+    volumes:
+     - "./flag:/opt/udpsanta/flag:ro"
+    restart: always
+###     cap_add:
+###      - SYS_PTRACE
+###     security_opt:
+###      - apparmor:unconfined

@@ -1,0 +1,13 @@
+{
+	"name": "playagame",
+	"date": "2018-12-03",
+	"state": "unopened",
+	"hidden": false,
+	"flag": "d0_the_w0r1d_a_favor_and_d0nt_act_like_a_mach1n3",
+	"category": "net",
+	"points": 150,
+	"info": "Global Thermonuclear War, Cleanup Edition",
+	"author": "Steven",
+	"play_url": "telnet 18.205.93.120 1203",
+	"download_url": ""
+}

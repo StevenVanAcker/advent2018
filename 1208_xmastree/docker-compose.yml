@@ -1,0 +1,7 @@
+version: '3'
+services:
+  chal:
+    build: .
+    command: make clean all
+    volumes:
+     - ".:/data"

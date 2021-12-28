@@ -1,0 +1,30 @@
+1. install python on the server
+	apt-get -y install python
+2. install curl on the client
+	apt-get -y install curl
+
+3. on the host, start tcpdump: 
+	tcpdump -ni br-b87b08a8cf24 -w tcpdump.pcap host 172.18.0.2 or host 172.18.0.3
+
+4. on the server, start with: 
+	python -m SimpleHTTPServer
+
+5. on the client, download with: 
+for f in client server udpsanta.proto;
+do
+  curl --output /dev/null -H "SponsordBy: CVE-2008-0166" http://172.18.0.3:8000/$f
+done
+
+6. on the server, stop the SimpleHTTPServer and start udpsanta server
+
+7. generate user data:
+mkdir /root/.udpsanta
+clientip=172.18.0.3; for u in Charlotte Jack Chloe Timmy Lucy Steven Oliver; do 
+  cp userdata/keys/$u.priv ~/.udpsanta/private.key; 
+  cp userdata/keys/$u.pub ~/.udpsanta/public.key; 
+  echo -en $u > ~/.udpsanta/user.name ; 
+  (echo "quit"; sleep 3) | ./client $clientip ; 
+done
+
+
+

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  chal1201:
+    build: .
+    ports:
+        - "1201:1201"
+    volumes:
+     - "./flag:/opt/vault1/flag:ro"
+
+    restart: always

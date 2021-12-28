@@ -1,0 +1,9 @@
+version: '3'
+services:
+  chal1203:
+    build: .
+    ports:
+        - "1203:1203"
+    volumes:
+     - "./flag:/opt/playagame/flag:ro"
+    restart: always

@@ -1,0 +1,14 @@
+{
+	"name": "Santa's Little Recorders",
+	"date": "2018-12-15",
+	"state": "unopened",
+	"hidden": false,
+	"flag": "A_mighty_duckface_on_this_one",
+	"category": "net/pwn",
+	"points": 200,
+	"info": "This year for secret Santa, Santa's elves are making a photo-album for Ms. Claus, featuring some of the millions of selfies her husband makes on the north pole. To help with the effort, they have created some automated processing to sort through the images.",
+	"author": "Steven",
+	"play_url": "#santas_little_recorders on irc.overthewire.org",
+	"download_url": ""
+}
+

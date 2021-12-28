@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+enum Command {
+  GETKEY = 0;	// <pubkey>
+  SENDMSG = 1;	// <username> <message>
+  LISTMSGS = 2;	// <count>
+  GETMSG = 3;	// <msgid>
+  ERROR = 4;    // only response, <error message>
+}
+
+/*
+ * Inner part of a request message. 
+ * command and parameters determine the nature of the request.
+ * timestamp ensures freshness.
+ * Padding is used to make the checksum in the Request message fit its requirements.
+ * The serialized form of this may be encrypted using symmetric encryption
+ * before use in the following Request message.
+ */
+message RequestInner {
+  Command cmd = 1; 
+  string arg1 = 2;
+  string arg2 = 3;
+  uint32 arg2num = 4;
+  uint32 timestamp = 5;
+  bytes padding = 6;
+}
+
+/* 
+ * A full request. 
+ *     from: the username of the user sending the request. This determines the encryption keys used.
+ *     encrypted: is the message encrypted with symmetric encryption?
+ *     innerRequest: serialized RequestInner message, 
+ *                   optionally encrypted with symmetric key, depending on command
+ */
+message Request {
+  string from = 1;
+  bool encrypted = 2;
+  bytes innerRequest = 3;
+}
+
+/*
+ * a response contains the server's timestamp for synchronization,
+ * and whatever data the server wants to send back.
+ * Padding is used to make the checksum in the Response message fit its requirements.
+ */
+message ResponseInner {
+  Command cmd = 1; 
+  uint32 timestamp = 2;
+  string result1 = 3;
+  string result2 = 4;
+  bool resultbool = 5;
+  bytes resultbytes = 6;
+  bytes padding = 7;
+}
+
+/* 
+ * A full response.
+ *     replyTo: the sha256 of the request being replied to
+ *     innerResponse: serialized ResponseInner message, 
+ *                    encrypted with public or symmetric key,  depending on command
+ *     padding: some unused space that can be filled with garbage
+ */
+message Response {
+  string replyTo = 1; 
+  bool pki_encrypted = 2;
+  bytes innerResponse = 3;
+}
+

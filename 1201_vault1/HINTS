@@ -1,0 +1,16 @@
+Santa filed the following bug-report for 'vault1': "Ho Ho Ho! Sometimes, when I move a wheel by more than 26 positions, it doesn't do the full animation. Is this a bug?"
+
+
+- Enter 20 numeric values separated by spaces.
+- Each value should be in the range -100 to 100.
+- The access code is not fixed, it is random per telnet connection.
+- After every guess, the wheels are randomized but the access code remains the same.
+- There is a subtle information leak...
+- If your eyes are still bleeding, try this a few times and pay close attention: 20 times value 27.
+
+
+
+
+
+
+

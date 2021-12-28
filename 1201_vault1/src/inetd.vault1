@@ -1,0 +1,2 @@
+1201 stream tcp nowait nobody /usr/bin/timeout /usr/bin/timeout 3600 /opt/vault1/server.py /opt/vault1/victory.txt /opt/vault1/flag
+

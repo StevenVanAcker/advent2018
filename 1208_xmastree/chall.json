@@ -1,0 +1,13 @@
+{
+	"name": "xmastree",
+	"date": "2018-12-08",
+	"state": "unopened",
+	"hidden": false,
+	"flag": "H4$Hy_XMA5",
+	"category": "reversing",
+	"points": 200,
+	"info": "Santa's nerdy cousin has decorated a chrismas tree...<br>(please note that the recovered string is not in flag format, it must be enclosed in AOTW{...})",
+	"author": "Steven",
+	"play_url": "",
+	"download_url": "RSgDs9FA4Qv3nuBc2H0Ft4IAG5JaDGGL-xmastree.tar.xz"
+}

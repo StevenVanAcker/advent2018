@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ircbot:
+    build: ./ircbot
+    links:
+     - handler
+    network_mode: bridge
+    restart: always
+
+  handler:
+    build: ./handler
+    volumes:
+     - "./flag:/opt/flag:ro"
+    network_mode: bridge
+    cpu_quota:            200000
+    oom_score_adj:        1000
+    mem_limit:            '128m'
+    memswap_limit:        '128m'
+    restart: always
+

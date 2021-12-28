@@ -1,0 +1,14 @@
+version: '2'
+services:
+  chal1222:
+    build: .
+    ports:
+        - "1222:1222"
+    volumes:
+     - "./flag:/opt/flag:ro"
+    cpu_quota:            100000
+    oom_score_adj:        1000
+    mem_limit:            '64m'
+    memswap_limit:        '64m'
+    restart: always
+
